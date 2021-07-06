@@ -1,0 +1,7 @@
+{
+  "name": "MiVeterinario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
