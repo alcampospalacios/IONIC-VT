@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  slidesOPtions: any = {};
+  slidesOPtions: any = {
+    slidesPerView: 4,
+  };
+
+  selected: string = 'veterinarians';
   constructor() {}
+
+  showContent(selected: string) {
+    this.selected = selected;
+  }
 }
