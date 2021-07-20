@@ -32,15 +32,6 @@ ion-avatar {
   margin-top: 18px;
 }
 
-ion-card {
-  box-shadow: none;
-  background: rgba(255, 255, 255, 0.8);
-  width: min-content;
-  ion-card-content {
-    text-align: -webkit-center;
-  }
-}
-
 .active {
   ion-card-content {
     ion-icon {
@@ -48,6 +39,29 @@ ion-card {
     }
     .icon-container {
       background-color: #3670e5;
+    }
+  }
+}
+
+ion-header {
+  ion-card {
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.8);
+    width: min-content;
+    ion-card-content {
+      text-align: -webkit-center;
+    }
+  }
+}
+
+ion-content {
+  ion-card {
+    ion-thumbnail {
+      height: 80px;
+      width: 75px;
+      ion-img {
+        border-radius: 20px;
+      }
     }
   }
 }
