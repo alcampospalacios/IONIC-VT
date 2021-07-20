@@ -32,5 +32,6 @@
 
 // Global settings
 ion-content {
-  --background: #f1f5f8;
+  --background: -prefix-linear-gradient(to bottom, #ffffff, #f1f5f8);
+  --background: linear-gradient(to bottom, #ffffff, #f1f5f8);
 }

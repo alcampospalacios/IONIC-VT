@@ -1,4 +1,4 @@
-<ion-header [translucent]="true" class="ion-no-border">
+<ion-header [translucent]="true">
   <ion-toolbar>
     <ion-grid>
       <ion-row>
@@ -26,21 +26,36 @@
   <ion-item lines="none">
     <ion-label>
       <p>Hola, Alejandro</p>
-      <h2 style="font-weight: bold">Como podemos ayudarte hoy?</h2>
+      <h1 style="font-weight: bold">Como podemos ayudarte hoy?</h1>
     </ion-label>
   </ion-item>
 
-  <div class="slides ion-margin-bottom">
+  <div class="slides ion-margin-bottom ion-margin-top">
     <ion-slides [options]="slidesOPtions">
       <ion-slide>
-        <!-- <ion-card>
-          <ion-card-header> </ion-card-header>
+        <ion-card>
+          <ion-card-header
+            ><div class="icon-container to-center">
+              <ion-icon
+                style="font-size: 56px; color: #9e9e9e"
+                name="fitness-outline"
+              ></ion-icon>
+            </div>
+          </ion-card-header>
           <ion-card-content>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            <ion-card-subtitle>Veterinario</ion-card-subtitle>
           </ion-card-content>
-        </ion-card> -->
+        </ion-card>
 
-        <ion-item> ion </ion-item>
+        <!-- <div class="icon-text-container">
+          <div class="icon-container to-center">
+            <ion-icon
+              style="font-size: 56px; color: #9e9e9e"
+              name="fitness-outline"
+            ></ion-icon>
+          </div>
+          <span style="margin-top: 10px; color: #9e9e9e">Veterinario</span>
+        </div> -->
       </ion-slide>
     </ion-slides>
   </div>
