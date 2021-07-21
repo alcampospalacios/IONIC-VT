@@ -11,7 +11,13 @@ export class Tab1Page {
     slidesPerView: 4,
   };
 
+  slidesOptionsNearlyVeterianarians: any = {
+    slidesPerView: 1,
+  };
+
   selected: string = 'veterinarians';
+
+  rating: number = 5;
   constructor() {}
 
   showContent(selected: string) {

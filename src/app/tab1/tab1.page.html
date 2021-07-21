@@ -117,32 +117,87 @@
   <ion-list lines="none" style="background: transparent">
     <ion-list-header> Veterianarios cercanos </ion-list-header>
     <ion-item color="transparent">
-      <ion-card>
-        <ion-card-content>
-          <ion-grid>
-            <ion-row>
-              <ion-col size="3">
-                <ion-thumbnail>
-                  <ion-img
-                    src="https://media-exp1.licdn.com/dms/image/C4E03AQGyXi-DhR-rrA/profile-displayphoto-shrink_200_200/0/1615328048937?e=1628121600&v=beta&t=3Ta366PQEibd1v0qPnuo2IRcluTV-vvZoHB3FT7EgS0"
-                  ></ion-img>
-                </ion-thumbnail>
-              </ion-col>
-              <ion-col size="9">
-                <ion-row>
-                  <ion-col size="12"><h3>Lic. Alejandro Campos</h3></ion-col>
-                  <ion-col size="12"
-                    ><span class="font"
-                      >Ingeniero en Ciencias informaticas</span
-                    ></ion-col
-                  >
-                  <ion-col size="12">*****</ion-col>
-                </ion-row>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card-content>
-      </ion-card>
+      <div class="slides">
+        <ion-slides [options]="slidesOptionsNearlyVeterianarians">
+          <ion-slide>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid style="text-align: initial">
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-thumbnail>
+                        <ion-img
+                          src="https://media-exp1.licdn.com/dms/image/C4E03AQGyXi-DhR-rrA/profile-displayphoto-shrink_200_200/0/1615328048937?e=1628121600&v=beta&t=3Ta366PQEibd1v0qPnuo2IRcluTV-vvZoHB3FT7EgS0"
+                        ></ion-img>
+                      </ion-thumbnail>
+                    </ion-col>
+                    <ion-col size="9">
+                      <ion-row>
+                        <ion-col size="12"
+                          ><h2>
+                            <strong>Lic. Alejandro Campos</strong>
+                          </h2></ion-col
+                        >
+                        <ion-col size="12"
+                          ><span class="font"
+                            >Ingeniero en Ciencias informaticas</span
+                          ></ion-col
+                        >
+                        <ion-col size="12">
+                          <div
+                            style="
+                              display: flex;
+                              flex-direction: row;
+                              justify-content: space-between;
+                            "
+                          >
+                            <acp-rate [(rating)]="rating"></acp-rate>
+                            <span>5.0</span>
+                            <span> (125 opiniones)</span>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+
+          <ion-slide>
+            <ion-card>
+              <ion-card-content>
+                <ion-grid style="text-align: initial">
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-thumbnail>
+                        <ion-img
+                          src="https://www.uci.cu/sites/default/files/imagenes/profesores/yordany-llovera-lopez.jpg"
+                        ></ion-img>
+                      </ion-thumbnail>
+                    </ion-col>
+                    <ion-col size="9">
+                      <ion-row>
+                        <ion-col size="12"
+                          ><h2>
+                            <strong>Msc. Yordany Llovera Lopez</strong>
+                          </h2></ion-col
+                        >
+                        <ion-col size="12"
+                          ><span class="font"
+                            >Master en Tecnologia Educativa</span
+                          ></ion-col
+                        >
+                        <ion-col size="12">*****</ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
     </ion-item>
   </ion-list>
 </ion-content>
