@@ -1,0 +1,195 @@
+<ion-content>
+  <ion-list lines="none" style="background: transparent">
+    <ion-list-header> Veterianarios cercanos </ion-list-header>
+    <ion-item color="transparent">
+      <div class="slides">
+        <ion-slides [options]="slidesOptionsNearlyVeterianarians">
+          <ion-slide *ngFor="let item of data">
+            <ion-card>
+              <ion-card-content>
+                <ion-grid style="text-align: initial">
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-thumbnail>
+                        <ion-img [src]="item.photo"></ion-img>
+                      </ion-thumbnail>
+                    </ion-col>
+                    <ion-col size="9">
+                      <ion-row>
+                        <ion-col size="12"
+                          ><h2>
+                            <strong>{{item.scientific_degree}} {{item.full_name}}</strong>
+                          </h2></ion-col
+                        >
+                        <ion-col size="12"><span class="font">{{item.speciality}}</span></ion-col>
+                        <ion-col size="12">
+                          <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <acp-rate [(rating)]="rating"></acp-rate>
+                            <span>{{item.rating}}</span>
+                            <span> ({{item.reviews.length}} opiniones)</span>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row style="border-bottom: 0.5px solid #f0f2f5">
+                    <ion-col size="6">
+                      <p>{{item.experience_years}} años de experiencia</p>
+                    </ion-col>
+                    <ion-col size="6">
+                      <div style="display: flex; flex-direction: row">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <p style="margin-left: 5px"><strong>{{item.address}}</strong></p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col size="12">
+                      <div style="display: flex; flex-direction: row">
+                        <ion-icon style="margin-top: 2px; color: black" name="time-outline"></ion-icon>
+
+                        <strong>
+                          <span style="margin-left: 5px">{{item.schedule}}</span>
+                        </strong>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </ion-item>
+
+    <ion-list-header> Recomendados </ion-list-header>
+    <ion-item color="transparent">
+      <div class="slides">
+        <ion-slides [options]="slidesOptionsNearlyVeterianarians">
+          <ion-slide *ngFor="let item of data">
+            <ion-card>
+              <ion-card-content>
+                <ion-grid style="text-align: initial">
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-thumbnail>
+                        <ion-img [src]="item.photo"></ion-img>
+                      </ion-thumbnail>
+                    </ion-col>
+                    <ion-col size="9">
+                      <ion-row>
+                        <ion-col size="12"
+                          ><h2>
+                            <strong>{{item.scientific_degree}} {{item.full_name}}</strong>
+                          </h2></ion-col
+                        >
+                        <ion-col size="12"><span class="font">{{item.speciality}}</span></ion-col>
+                        <ion-col size="12">
+                          <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <acp-rate [(rating)]="rating"></acp-rate>
+                            <span>{{item.rating}}</span>
+                            <span> ({{item.reviews.length}} opiniones)</span>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row style="border-bottom: 0.5px solid #f0f2f5">
+                    <ion-col size="6">
+                      <p>{{item.experience_years}} años de experiencia</p>
+                    </ion-col>
+                    <ion-col size="6">
+                      <div style="display: flex; flex-direction: row">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <p style="margin-left: 5px"><strong>{{item.address}}</strong></p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col size="12">
+                      <div style="display: flex; flex-direction: row">
+                        <ion-icon style="margin-top: 2px; color: black" name="time-outline"></ion-icon>
+
+                        <strong>
+                          <span style="margin-left: 5px">{{item.schedule}}</span>
+                        </strong>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </ion-item>
+
+    <ion-list-header> Todos </ion-list-header>
+    <ion-item color="transparent">
+      <div class="slides">
+        <ion-slides [options]="slidesOptionsNearlyVeterianarians">
+          <ion-slide *ngFor="let item of data">
+            <ion-card>
+              <ion-card-content>
+                <ion-grid style="text-align: initial">
+                  <ion-row>
+                    <ion-col size="3">
+                      <ion-thumbnail>
+                        <ion-img [src]="item.photo"></ion-img>
+                      </ion-thumbnail>
+                    </ion-col>
+                    <ion-col size="9">
+                      <ion-row>
+                        <ion-col size="12"
+                          ><h2>
+                            <strong>{{item.scientific_degree}} {{item.full_name}}</strong>
+                          </h2></ion-col
+                        >
+                        <ion-col size="12"><span class="font">{{item.speciality}}</span></ion-col>
+                        <ion-col size="12">
+                          <div style="display: flex; flex-direction: row; justify-content: space-between">
+                            <acp-rate [(rating)]="rating"></acp-rate>
+                            <span>{{item.rating}}</span>
+                            <span> ({{item.reviews.length}} opiniones)</span>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row style="border-bottom: 0.5px solid #f0f2f5">
+                    <ion-col size="6">
+                      <p>{{item.experience_years}} años de experiencia</p>
+                    </ion-col>
+                    <ion-col size="6">
+                      <div style="display: flex; flex-direction: row">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <p style="margin-left: 5px"><strong>{{item.address}}</strong></p>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+
+                  <ion-row>
+                    <ion-col size="12">
+                      <div style="display: flex; flex-direction: row">
+                        <ion-icon style="margin-top: 2px; color: black" name="time-outline"></ion-icon>
+
+                        <strong>
+                          <span style="margin-left: 5px">{{item.schedule}}</span>
+                        </strong>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
