@@ -1,4 +1,8 @@
-<ion-content>
+<ion-content
+  [scrollEvents]="true"
+  (ionScroll)="logScrolling($event)"
+  (ionScrollStart)="scrollStart('header')"
+>
   <ion-list lines="none" style="background: transparent">
     <ion-list-header> Veterianarios cercanos </ion-list-header>
     <ion-item color="transparent">
@@ -192,4 +196,14 @@
       </div>
     </ion-item>
   </ion-list>
+
+  <ion-infinite-scroll
+    threshold="15%"
+    id="infinite-scroll"
+    (ionInfinite)="loadMore($event)"
+    loadingSpinner="lines"
+  >
+    <ion-infinite-scroll-content loading-spinner="lines" loading-text="Cargando datos...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

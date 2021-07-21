@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" #header>
   <ion-toolbar>
     <ion-grid>
       <ion-row>
@@ -23,74 +23,76 @@
     </ion-grid>
   </ion-toolbar>
 
-  <ion-item lines="none">
-    <ion-label>
-      <p>Hola, Alejandro</p>
-      <h1 style="font-weight: bold">Como podemos ayudarte hoy?</h1>
-    </ion-label>
-  </ion-item>
+  <ion-toolbar id="toolbar_id">
+    <ion-item lines="none">
+      <ion-label>
+        <p>Hola, Alejandro</p>
+        <h1 style="font-weight: bold">Como podemos ayudarte hoy?</h1>
+      </ion-label>
+    </ion-item>
 
-  <div class="slides">
-    <ion-slides [options]="slidesOPtionsHeader">
-      <ion-slide>
-        <ion-card
-          [ngClass]="{'active': selected === 'veterinarians'}"
-          (click)="showContent('veterinarians')"
-          routerLink="/tabs/tab1/veterinarians"
-        >
-          <ion-card-content>
-            <div class="icon-text-container">
-              <div class="icon-container to-center">
-                <ion-icon style="font-size: 36px; color: #9e9e9e" name="fitness-outline"></ion-icon>
-              </div>
-              <span class="font">Veterinario</span>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card [ngClass]="{'active': selected === 'pet'}" (click)="showContent('pet')">
-          <ion-card-content>
-            <div class="icon-text-container">
-              <div class="icon-container to-center">
-                <ion-icon style="font-size: 36px; color: #9e9e9e" name="paw-outline"></ion-icon>
-              </div>
-              <span class="font">Mascotas</span>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card [ngClass]="{'active': selected === 'toys'}" (click)="showContent('toys')">
-          <ion-card-content>
-            <div class="icon-text-container">
-              <div class="icon-container to-center">
-                <ion-icon style="font-size: 36px; color: #9e9e9e" name="baseball-outline"></ion-icon>
-              </div>
-
-              <span class="font">Juguetes</span>
-            </div></ion-card-content
+    <div class="slides">
+      <ion-slides [options]="slidesOPtionsHeader">
+        <ion-slide>
+          <ion-card
+            [ngClass]="{'active': selected === 'veterinarians'}"
+            (click)="showContent('veterinarians')"
+            routerLink="/tabs/tab1/veterinarians"
           >
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card [ngClass]="{'active': selected === 'food'}" (click)="showContent('food')">
-          <ion-card-content>
-            <div class="icon-text-container">
-              <div class="icon-container to-center">
-                <ion-icon style="font-size: 36px; color: #9e9e9e" name="fast-food-outline"></ion-icon>
+            <ion-card-content>
+              <div class="icon-text-container">
+                <div class="icon-container to-center">
+                  <ion-icon style="font-size: 36px; color: #9e9e9e" name="fitness-outline"></ion-icon>
+                </div>
+                <span class="font">Veterinario</span>
               </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
 
-              <span class="font">Comida</span>
-            </div></ion-card-content
-          >
-        </ion-card>
-      </ion-slide>
-    </ion-slides>
-  </div>
+        <ion-slide>
+          <ion-card [ngClass]="{'active': selected === 'pet'}" (click)="showContent('pet')">
+            <ion-card-content>
+              <div class="icon-text-container">
+                <div class="icon-container to-center">
+                  <ion-icon style="font-size: 36px; color: #9e9e9e" name="paw-outline"></ion-icon>
+                </div>
+                <span class="font">Mascotas</span>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card [ngClass]="{'active': selected === 'toys'}" (click)="showContent('toys')">
+            <ion-card-content>
+              <div class="icon-text-container">
+                <div class="icon-container to-center">
+                  <ion-icon style="font-size: 36px; color: #9e9e9e" name="baseball-outline"></ion-icon>
+                </div>
+
+                <span class="font">Juguetes</span>
+              </div></ion-card-content
+            >
+          </ion-card>
+        </ion-slide>
+
+        <ion-slide>
+          <ion-card [ngClass]="{'active': selected === 'food'}" (click)="showContent('food')">
+            <ion-card-content>
+              <div class="icon-text-container">
+                <div class="icon-container to-center">
+                  <ion-icon style="font-size: 36px; color: #9e9e9e" name="fast-food-outline"></ion-icon>
+                </div>
+
+                <span class="font">Comida</span>
+              </div></ion-card-content
+            >
+          </ion-card>
+        </ion-slide>
+      </ion-slides>
+    </div>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
