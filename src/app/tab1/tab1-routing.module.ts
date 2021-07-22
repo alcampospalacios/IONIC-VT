@@ -19,6 +19,21 @@ const routes: Routes = [
             (m) => m.VeterinariansPageModule
           ),
       },
+
+      {
+        path: 'pets',
+        loadChildren: () => import('../layouts/pages/pets/pets.module').then((m) => m.PetsPageModule),
+      },
+
+      {
+        path: 'toys',
+        loadChildren: () => import('../layouts/pages/toys/toys.module').then((m) => m.ToysPageModule),
+      },
+
+      {
+        path: 'food',
+        loadChildren: () => import('../layouts/pages/food/food.module').then((m) => m.FoodPageModule),
+      },
     ],
   },
 ];

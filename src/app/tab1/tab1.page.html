@@ -23,7 +23,7 @@
     </ion-grid>
   </ion-toolbar>
 
-  <ion-toolbar id="toolbar_id">
+  <ion-toolbar id="toolbar_id" class="toolbar-2">
     <ion-item lines="none">
       <ion-label>
         <p>Hola, Alejandro</p>
@@ -51,7 +51,11 @@
         </ion-slide>
 
         <ion-slide>
-          <ion-card [ngClass]="{'active': selected === 'pet'}" (click)="showContent('pet')">
+          <ion-card
+            [ngClass]="{'active': selected === 'pet'}"
+            (click)="showContent('pet')"
+            routerLink="/tabs/tab1/pets"
+          >
             <ion-card-content>
               <div class="icon-text-container">
                 <div class="icon-container to-center">
@@ -64,7 +68,11 @@
         </ion-slide>
 
         <ion-slide>
-          <ion-card [ngClass]="{'active': selected === 'toys'}" (click)="showContent('toys')">
+          <ion-card
+            [ngClass]="{'active': selected === 'toys'}"
+            (click)="showContent('toys')"
+            routerLink="/tabs/tab1/toys"
+          >
             <ion-card-content>
               <div class="icon-text-container">
                 <div class="icon-container to-center">
@@ -78,7 +86,11 @@
         </ion-slide>
 
         <ion-slide>
-          <ion-card [ngClass]="{'active': selected === 'food'}" (click)="showContent('food')">
+          <ion-card
+            [ngClass]="{'active': selected === 'food'}"
+            (click)="showContent('food')"
+            routerLink="/tabs/tab1/food"
+          >
             <ion-card-content>
               <div class="icon-text-container">
                 <div class="icon-container to-center">

@@ -22,7 +22,7 @@ import { VeterinariansService } from 'src/app/service/veterinarians.service';
 })
 export class VeterinariansPage implements OnInit {
   slidesOptionsNearlyVeterianarians: any = {
-    slidesPerView: 1,
+    slidesPerView: 1.05,
   };
   rating: number = 5;
   data: Array<Veterinarians>;
@@ -44,20 +44,13 @@ export class VeterinariansPage implements OnInit {
   lastX: any;
   logScrolling($event: any) {
     if ($event.detail.scrollTop > Math.max(0, this.lastX)) {
-      // this.render.setStyle(this.toolbar, 'display', 'none');
       this.render.removeClass(this.toolbar, 'show-toolbar');
       this.render.addClass(this.toolbar, 'hide-toolbar');
     } else {
       this.render.removeClass(this.toolbar, 'hide-toolbar');
       this.render.addClass(this.toolbar, 'show-toolbar');
-      // this.render.setStyle(this.toolbar, 'display', 'block');
     }
 
     this.lastX = $event.detail.scrollTop;
-  }
-
-  scrollStart(header) {
-    // console.log(this.header);
-    // this.header = header.el;
   }
 }
