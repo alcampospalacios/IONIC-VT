@@ -1,5 +1,5 @@
 <ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)">
-  <ion-list lines="none" style="background: transparent; margin-top: 53%">
+  <ion-list lines="none" style="background: transparent; margin-top: 43%">
     <ion-list-header> Veterianarios cercanos </ion-list-header>
     <ion-item color="transparent">
       <div class="slides">
@@ -16,17 +16,21 @@
                     </ion-col>
                     <ion-col size="9">
                       <ion-row>
-                        <ion-col size="12"
+                        <ion-col size="12" style="padding: 0"
                           ><h2>
                             <strong>{{item.scientific_degree}} {{item.full_name}}</strong>
                           </h2></ion-col
                         >
-                        <ion-col size="12"><span class="font">{{item.speciality}}</span></ion-col>
-                        <ion-col size="12">
+                        <ion-col size="12" style="padding: 0"
+                          ><span class="font">{{item.speciality}}</span></ion-col
+                        >
+                        <ion-col size="12" style="padding: 0">
                           <div style="display: flex; flex-direction: row; justify-content: space-between">
                             <acp-rate [(rating)]="item.rating"></acp-rate>
-                            <span>{{item.rating}}</span>
-                            <span> ({{item.reviews.length}} opiniones)</span>
+                            <div>
+                              <span>{{item.rating}}</span>
+                              <span> ({{item.reviews.length}} opiniones)</span>
+                            </div>
                           </div>
                         </ion-col>
                       </ion-row>
@@ -80,17 +84,21 @@
                     </ion-col>
                     <ion-col size="9">
                       <ion-row>
-                        <ion-col size="12"
+                        <ion-col size="12" style="padding: 0"
                           ><h2>
                             <strong>{{item.scientific_degree}} {{item.full_name}}</strong>
                           </h2></ion-col
                         >
-                        <ion-col size="12"><span class="font">{{item.speciality}}</span></ion-col>
-                        <ion-col size="12">
+                        <ion-col size="12" style="padding: 0"
+                          ><span class="font">{{item.speciality}}</span></ion-col
+                        >
+                        <ion-col size="12" style="padding: 0">
                           <div style="display: flex; flex-direction: row; justify-content: space-between">
                             <acp-rate [(rating)]="rating"></acp-rate>
-                            <span>{{item.rating}}</span>
-                            <span> ({{item.reviews.length}} opiniones)</span>
+                            <div>
+                              <span>{{item.rating}}</span>
+                              <span> ({{item.reviews.length}} opiniones)</span>
+                            </div>
                           </div>
                         </ion-col>
                       </ion-row>
@@ -144,17 +152,21 @@
                     </ion-col>
                     <ion-col size="9">
                       <ion-row>
-                        <ion-col size="12"
+                        <ion-col size="12" style="padding: 0"
                           ><h2>
                             <strong>{{item.scientific_degree}} {{item.full_name}}</strong>
                           </h2></ion-col
                         >
-                        <ion-col size="12"><span class="font">{{item.speciality}}</span></ion-col>
-                        <ion-col size="12">
+                        <ion-col size="12" style="padding: 0"
+                          ><span class="font">{{item.speciality}}</span></ion-col
+                        >
+                        <ion-col size="12" style="padding: 0">
                           <div style="display: flex; flex-direction: row; justify-content: space-between">
                             <acp-rate [(rating)]="rating"></acp-rate>
-                            <span>{{item.rating}}</span>
-                            <span> ({{item.reviews.length}} opiniones)</span>
+                            <div>
+                              <span>{{item.rating}}</span>
+                              <span> ({{item.reviews.length}} opiniones)</span>
+                            </div>
                           </div>
                         </ion-col>
                       </ion-row>

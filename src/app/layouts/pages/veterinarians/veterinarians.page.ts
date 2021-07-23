@@ -3,6 +3,7 @@
 /* eslint-disable @angular-eslint/component-selector */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   Input,
@@ -27,14 +28,12 @@ export class VeterinariansPage implements OnInit {
   rating: number = 5;
   data: Array<Veterinarians>;
 
-  toolbar: any;
+  toolbar: any = document.getElementById('toolbar_id');
 
   constructor(private manager: VeterinariansService, private render: Renderer2) {}
 
   ngOnInit(): void {
     this.data = this.manager.get();
-
-    this.toolbar = document.getElementById('toolbar_id');
   }
 
   loadMore($event: any) {
@@ -50,7 +49,6 @@ export class VeterinariansPage implements OnInit {
       this.render.removeClass(this.toolbar, 'hide-toolbar');
       this.render.addClass(this.toolbar, 'show-toolbar');
     }
-
     this.lastX = $event.detail.scrollTop;
   }
 }

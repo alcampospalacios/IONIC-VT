@@ -3,8 +3,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
+    path: 'main',
+    loadChildren: () => import('./layouts/pages/main/main.module').then((m) => m.MainPageModule),
+  },
+  {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then((m) => m.TabsPageModule),
+    redirectTo: '/main/veterinarians',
+    pathMatch: 'full',
   },
 ];
 @NgModule({

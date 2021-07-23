@@ -11,6 +11,13 @@ ion-avatar {
   justify-content: center;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+}
+
 .icon-container {
   border-radius: 20px;
   background-color: #f1f5f8;
@@ -29,7 +36,7 @@ ion-avatar {
   font-weight: 500;
   font-family: Helvetica, sans-serif;
   color: #737373;
-  margin-top: 18px;
+  margin-top: 8px;
 }
 
 .active {
@@ -44,11 +51,14 @@ ion-avatar {
 }
 
 ion-header {
+  box-shadow: 0 0 0;
   ion-card {
     box-shadow: none;
     background: rgba(255, 255, 255, 0.8);
     width: min-content;
+    margin: 0;
     ion-card-content {
+      padding: 5px;
       text-align: -webkit-center;
     }
   }
@@ -72,11 +82,13 @@ ion-content {
 
 // Animations fired from view childs of router
 .hide-toolbar {
+  z-index: 0;
   top: 0;
   animation: fadeOutUp 250ms ease-in-out both;
 }
 
 .show-toolbar {
+  z-index: 0;
   animation: fadeInDown 250ms ease-in-out both;
 }
 
