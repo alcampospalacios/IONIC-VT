@@ -32,3 +32,19 @@ ion-card {
     }
   }
 }
+
+.shrink {
+  margin-top: 5%;
+  -o-transition: margin-top 250ms;
+  -moz-transition: margin-top 250ms;
+  -webkit-transition: margin-top 250ms;
+  transition: margin-top 250ms;
+}
+
+.expanded {
+  margin-top: 40%;
+  -o-transition: margin-top 250ms;
+  -moz-transition: margin-top 250ms;
+  -webkit-transition: margin-top 250ms;
+  transition: margin-top 250ms;
+}
