@@ -9,6 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class RateComponent implements OnInit {
   @Input() rating: number;
+  @Input() disabled: boolean;
   @Output() ratingChange: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
@@ -16,8 +17,10 @@ export class RateComponent implements OnInit {
   ngOnInit() {}
 
   rate(index: number) {
-    this.rating = index;
-    this.ratingChange.emit(this.rating);
+    if (!this.disabled) {
+      this.rating = index;
+      this.ratingChange.emit(this.rating);
+    }
   }
 
   getColor(index: number) {

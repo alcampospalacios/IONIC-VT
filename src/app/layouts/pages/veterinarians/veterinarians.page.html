@@ -26,7 +26,7 @@
                         >
                         <ion-col size="12" style="padding: 0">
                           <div style="display: flex; flex-direction: row; justify-content: space-between">
-                            <acp-rate [(rating)]="item.rating"></acp-rate>
+                            <acp-rate [disabled]="true" [(rating)]="item.rating"></acp-rate>
                             <div>
                               <span>{{item.rating}}</span>
                               <span> ({{item.reviews.length}} opiniones)</span>
@@ -94,7 +94,7 @@
                         >
                         <ion-col size="12" style="padding: 0">
                           <div style="display: flex; flex-direction: row; justify-content: space-between">
-                            <acp-rate [(rating)]="rating"></acp-rate>
+                            <acp-rate [disabled]="true" [(rating)]="rating"></acp-rate>
                             <div>
                               <span>{{item.rating}}</span>
                               <span> ({{item.reviews.length}} opiniones)</span>
@@ -162,7 +162,7 @@
                         >
                         <ion-col size="12" style="padding: 0">
                           <div style="display: flex; flex-direction: row; justify-content: space-between">
-                            <acp-rate [(rating)]="rating"></acp-rate>
+                            <acp-rate [disabled]="true" [(rating)]="rating"></acp-rate>
                             <div>
                               <span>{{item.rating}}</span>
                               <span> ({{item.reviews.length}} opiniones)</span>
