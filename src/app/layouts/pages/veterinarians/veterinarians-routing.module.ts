@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: VeterinariansPage
+  },
+  {
+    path: 'veterinarians-details',
+    loadChildren: () => import('./veterinarians-details/veterinarians-details.module').then( m => m.VeterinariansDetailsPageModule)
   }
 ];
 

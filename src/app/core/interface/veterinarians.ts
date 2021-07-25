@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 export interface Veterinarians {
+  id: string;
   full_name: string;
   speciality: string;
   scientific_degree: string;

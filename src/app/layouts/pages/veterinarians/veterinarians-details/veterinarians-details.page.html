@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button class="back-button" routerLink="/tabs/tab1/veterinarians">
+        <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="heart-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img [src]="data.photo" />
+
+  <section class="content">
+    <div class="icon-text-container">
+      <h2 style="padding: 0; margin-top: 10px; margin-bottom: 0">
+        <strong>{{data.scientific_degree}} {{data.full_name}}</strong>
+      </h2>
+      <p style="padding: 0; margin-top: 3px; margin-bottom: 0; color: #737373">{{data.speciality}}</p>
+      <p style="padding: 0; margin-top: 3px; margin-bottom: 0; color: #737373">Dueño y señor de esta apk</p>
+    </div>
+  </section>
+</ion-content>

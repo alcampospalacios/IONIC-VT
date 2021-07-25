@@ -9,6 +9,7 @@ import { Veterinarians } from '../core/interface/veterinarians';
 export class VeterinariansService {
   private data: Array<Veterinarians> = [
     {
+      id: '1',
       full_name: 'Alejandro Campos',
       speciality: 'Ingeniero en ciencias informaticas',
       scientific_degree: 'Lic.',
@@ -22,6 +23,7 @@ export class VeterinariansService {
     },
 
     {
+      id: '2',
       full_name: 'Yordany Lloveras',
       speciality: 'Master en tecnologia educativa',
       scientific_degree: 'Msc.',
@@ -38,5 +40,17 @@ export class VeterinariansService {
 
   get() {
     return this.data;
+  }
+
+  getById(id: string) {
+    let vet: Veterinarians;
+
+    this.data.forEach((e) => {
+      if (e.id === id) {
+        vet = e;
+      }
+    });
+
+    return vet;
   }
 }

@@ -16,6 +16,14 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
+
+  {
+    path: 'details/:id',
+    loadChildren: () =>
+      import('../app/layouts/pages/veterinarians/veterinarians-details/veterinarians-details.module').then(
+        (m) => m.VeterinariansDetailsPageModule
+      ),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],

@@ -14,6 +14,7 @@ import {
   ViewChildren,
   ViewContainerRef,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { Veterinarians } from 'src/app/core/interface/veterinarians';
 import { VeterinariansService } from 'src/app/service/veterinarians.service';
 
@@ -32,7 +33,7 @@ export class VeterinariansPage implements OnInit, AfterViewInit {
   toolbar: any = document.getElementById('toolbar_id');
   veterinarians_list: any;
 
-  constructor(private manager: VeterinariansService, private render: Renderer2) {}
+  constructor(private manager: VeterinariansService, private router: Router, private render: Renderer2) {}
 
   ngAfterViewInit(): void {
     this.veterinarians_list = document.getElementById('veterinarians_id');
@@ -46,7 +47,7 @@ export class VeterinariansPage implements OnInit, AfterViewInit {
     // console.log($event);
   }
 
-  lastX: any;
+  // lastX: any;
   logScrolling($event: any) {
     if ($event.detail.scrollTop !== 0) {
       // handling toolbar effect
@@ -65,5 +66,11 @@ export class VeterinariansPage implements OnInit, AfterViewInit {
       this.render.addClass(this.veterinarians_list, 'expanded');
     }
     // this.lastX = $event.detail.scrollTop;
+  }
+
+  goToDetails(item: Veterinarians) {
+    this.router.navigateByUrl(`details/${item.id}`, {
+      state: item,
+    });
   }
 }

@@ -5,7 +5,7 @@
       <div class="slides">
         <ion-slides [options]="slidesOptionsNearlyVeterianarians">
           <ion-slide *ngFor="let item of data">
-            <ion-card>
+            <ion-card (click)="goToDetails(item)">
               <ion-card-content>
                 <ion-grid style="text-align: initial">
                   <ion-row>
@@ -73,7 +73,7 @@
       <div class="slides">
         <ion-slides [options]="slidesOptionsNearlyVeterianarians">
           <ion-slide *ngFor="let item of data">
-            <ion-card>
+            <ion-card (click)="goToDetails(item)">
               <ion-card-content>
                 <ion-grid style="text-align: initial">
                   <ion-row>
@@ -141,7 +141,7 @@
       <div class="slides">
         <ion-slides [options]="slidesOptionsNearlyVeterianarians">
           <ion-slide *ngFor="let item of data">
-            <ion-card>
+            <ion-card (click)="goToDetails(item)">
               <ion-card-content>
                 <ion-grid style="text-align: initial">
                   <ion-row>
