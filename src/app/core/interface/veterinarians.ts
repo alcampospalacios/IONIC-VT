@@ -8,6 +8,7 @@ export interface Veterinarians {
   experience_years: number;
   rating: number;
   schedule: string;
+  clinic: string;
   coordinate?: string;
   reviews?: Array<Comment>;
   photo?: string;
