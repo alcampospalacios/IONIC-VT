@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-inferrable-types */
+/* eslint-disable @typescript-eslint/semi */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable prefer-const */
 /* eslint-disable quote-props */
@@ -21,6 +23,8 @@ import { Geolocation } from '@capacitor/geolocation';
 export class MapComponent implements OnInit, OnDestroy {
   @Input() latLong: Array<any>;
   @Input() location: string;
+
+  @Input() id: string = 'map';
 
   defaultLocation = '23.13302, -82.38304';
   defaultZoom = 12;
@@ -71,7 +75,8 @@ export class MapComponent implements OnInit, OnDestroy {
     // }
 
     this.visible = true;
-    this.map = L.map('map').setView(
+
+    this.map = L.map(this.id).setView(
       L.latLng(this.defaultLocation.split(',').map((v) => parseFloat(v))),
       this.defaultZoom
     );
@@ -122,16 +127,15 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   remove_if_exist_map() {
-    let container = L.DomUtil.get('map');
-    console.log('container: ', container);
+    let container = L.DomUtil.get(this.id);
     if (container !== undefined) {
-      console.log('map: ', this.map);
-      this.map.remove();
+      if (this.map !== undefined) {
+        this.map.remove();
+      }
     }
   }
 
   async getPosition() {
     const coordinates = await Geolocation.getCurrentPosition();
-    console.log('Current position:', coordinates);
   }
 }
