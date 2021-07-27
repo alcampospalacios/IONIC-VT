@@ -1,0 +1,9 @@
+<ion-thumbnail *ngIf="url; else noThumbnail">
+  <ion-img [src]="url"></ion-img>
+</ion-thumbnail>
+
+<ng-template #noThumbnail>
+  <ion-thumbnail>
+    <ion-img src="../../../../../assets/default/svg/no-image.svg"></ion-img>
+  </ion-thumbnail>
+</ng-template>

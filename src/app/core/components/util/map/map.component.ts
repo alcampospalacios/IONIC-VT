@@ -124,7 +124,8 @@ export class MapComponent implements OnInit, OnDestroy {
 
   remove_if_exist_map() {
     const container = L.DomUtil.get('map');
-    if (container != null) {
+    console.log('container: ', container);
+    if (container !== null) {
       this.map.remove();
     }
   }

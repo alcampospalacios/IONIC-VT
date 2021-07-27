@@ -1,0 +1,9 @@
+<ion-avatar *ngIf="url; else noAvatar">
+  <img [src]="url" />
+</ion-avatar>
+
+<ng-template #noAvatar>
+  <ion-avatar>
+    <img src="../../../../../assets/default/svg/profile.svg" />
+  </ion-avatar>
+</ng-template>

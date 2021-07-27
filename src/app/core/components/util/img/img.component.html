@@ -1,0 +1,5 @@
+<img class="block-image" [src]="url" *ngIf="url; else noURL" />
+
+<ng-template #noURL>
+  <img src="../../../../../assets/default/svg/no-image.svg" width="100%" height="40%" />
+</ng-template>

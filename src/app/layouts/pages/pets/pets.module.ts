@@ -7,14 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { PetsPageRoutingModule } from './pets-routing.module';
 
 import { PetsPage } from './pets.page';
+import { CoreModule } from 'src/app/core/core.module';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PetsPageRoutingModule
-  ],
-  declarations: [PetsPage]
+  imports: [CommonModule, FormsModule, IonicModule, PetsPageRoutingModule, CoreModule],
+  declarations: [PetsPage],
 })
 export class PetsPageModule {}
