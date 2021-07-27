@@ -27,19 +27,19 @@
 
     <ion-grid>
       <ion-row>
-        <ion-col>
+        <ion-col size="4">
           <ion-chip color="tertiary">
             <ion-icon name="call-outline"></ion-icon>
             <ion-label>Llamar</ion-label>
           </ion-chip>
         </ion-col>
-        <ion-col>
+        <ion-col size="4">
           <ion-chip color="warning">
             <ion-icon name="chatbubbles-outline"></ion-icon>
             <ion-label>Mensaje</ion-label>
           </ion-chip>
         </ion-col>
-        <ion-col>
+        <ion-col size="4">
           <ion-chip color="success">
             <ion-icon name="logo-whatsapp"></ion-icon>
             <ion-label>Whatsapp</ion-label>
@@ -68,7 +68,9 @@
             <strong>Ubicación</strong>
           </h4>
         </ion-col>
-        <ion-col> </ion-col>
+        <ion-col>
+          <acp-map [location]="'23.097296, -82.369333'"></acp-map>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </section>
