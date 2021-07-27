@@ -1,4 +1,4 @@
-<ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)">
+<ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)" *ngIf="data; else noVeterinary">
   <ion-list lines="none" class="expanded" style="background: transparent" id="veterinarians_id">
     <ion-list-header> Veterianarios cercanos </ion-list-header>
     <ion-item color="transparent">
@@ -209,3 +209,7 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
+
+<ng-template #noVeterinary>
+  <acp-empty [style]="'margin-top: 50%; width: 80%; height: 80%'" [type]="'no-veterinary'"></acp-empty>
+</ng-template>

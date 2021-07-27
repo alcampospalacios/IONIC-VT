@@ -22,28 +22,31 @@
         <strong>{{data.scientific_degree}} {{data.full_name}}</strong>
       </h4>
       <p class="block-2">{{data.clinic}}</p>
+      <acp-rate [disabled]="true" [rating]="4" style="margin-top: 4px"></acp-rate>
       <!-- <p class="block-2">{{data.speciality}}</p> -->
     </div>
 
     <ion-grid>
       <ion-row>
         <ion-col size="4">
-          <ion-chip color="tertiary">
+          <ion-chip color="tertiary" (click)="call(data.phone_number)">
             <ion-icon name="call-outline"></ion-icon>
             <ion-label>Llamar</ion-label>
           </ion-chip>
         </ion-col>
         <ion-col size="4">
-          <ion-chip color="warning">
+          <ion-chip color="warning" (click)="message(data.phone_number)">
             <ion-icon name="chatbubbles-outline"></ion-icon>
             <ion-label>Mensaje</ion-label>
           </ion-chip>
         </ion-col>
         <ion-col size="4">
-          <ion-chip color="success">
-            <ion-icon name="logo-whatsapp"></ion-icon>
-            <ion-label>Whatsapp</ion-label>
-          </ion-chip>
+          <a [href]="url" style="text-decoration: none">
+            <ion-chip color="success">
+              <ion-icon name="logo-whatsapp"></ion-icon>
+              <ion-label>Whatsapp</ion-label>
+            </ion-chip>
+          </a>
         </ion-col>
       </ion-row>
 

@@ -1,8 +1,9 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable prefer-const */
 /* eslint-disable quote-props */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @angular-eslint/component-selector */
-import { AfterViewChecked, AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
-// import { Map, tileLayer, marker, polyline } from 'leaflet';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import * as L from 'leaflet';
 import 'leaflet-extra-markers/dist/css/leaflet.extra-markers.min.css';
 import 'leaflet-extra-markers/dist/js/leaflet.extra-markers.js';
@@ -11,9 +12,6 @@ import 'leaflet.markercluster/dist/leaflet.markercluster.js';
 import 'leaflet.fullscreen/Control.FullScreen.css';
 import 'leaflet.fullscreen/Control.FullScreen.js';
 import { Geolocation } from '@capacitor/geolocation';
-
-// import 'leaflet/dist/images/marker-shadow.png';
-// import 'leaflet/dist/images/marker-icon.png';
 
 @Component({
   selector: 'acp-map',
@@ -25,7 +23,7 @@ export class MapComponent implements OnInit, OnDestroy {
   @Input() location: string;
 
   defaultLocation = '23.13302, -82.38304';
-  defaultZoom = 13;
+  defaultZoom = 12;
   map: any;
   marker: any;
   visible: boolean;
@@ -72,6 +70,7 @@ export class MapComponent implements OnInit, OnDestroy {
     //   this.defaultZoom = 10;
     // }
 
+    this.visible = true;
     this.map = L.map('map').setView(
       L.latLng(this.defaultLocation.split(',').map((v) => parseFloat(v))),
       this.defaultZoom
@@ -123,9 +122,10 @@ export class MapComponent implements OnInit, OnDestroy {
   }
 
   remove_if_exist_map() {
-    const container = L.DomUtil.get('map');
+    let container = L.DomUtil.get('map');
     console.log('container: ', container);
-    if (container !== null) {
+    if (container !== undefined) {
+      console.log('map: ', this.map);
       this.map.remove();
     }
   }

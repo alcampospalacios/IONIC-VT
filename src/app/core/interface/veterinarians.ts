@@ -12,4 +12,5 @@ export interface Veterinarians {
   coordinate?: string;
   reviews?: Array<Comment>;
   photo?: string;
+  phone_number: string;
 }
