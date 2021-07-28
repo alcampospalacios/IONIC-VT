@@ -1,5 +1,5 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar id="toolbarId" class="show-toolbar">
     <ion-buttons slot="start">
       <ion-button class="back-button" routerLink="/tabs/tab1/veterinarians">
         <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
@@ -13,7 +13,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
   <acp-img [url]="data.photo"></acp-img>
 
   <section class="content">

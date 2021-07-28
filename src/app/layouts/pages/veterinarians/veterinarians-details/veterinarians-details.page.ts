@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/member-ordering */
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable id-blacklist */
 /* eslint-disable @angular-eslint/component-selector */
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Veterinarians } from 'src/app/core/interface/veterinarians';
 import { VeterinariansService } from 'src/app/service/veterinarians.service';
@@ -16,7 +17,7 @@ import { SMS } from '@ionic-native/sms/ngx';
   templateUrl: './veterinarians-details.page.html',
   styleUrls: ['./veterinarians-details.page.scss'],
 })
-export class VeterinariansDetailsPage implements OnInit {
+export class VeterinariansDetailsPage implements OnInit, AfterViewInit {
   data: Veterinarians;
 
   // whatsapp connection
@@ -24,10 +25,14 @@ export class VeterinariansDetailsPage implements OnInit {
   number: string;
   url: string;
 
+  // toolbar dynamic styles
+  toolbar: any;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private router: Router,
     private veterinariansService: VeterinariansService,
+    private render: Renderer2,
     private callNumber: CallNumber,
     private sms: SMS
   ) {
@@ -41,6 +46,21 @@ export class VeterinariansDetailsPage implements OnInit {
     }
 
     this.url = `http://wa.me/${this.country_code}${this.data.phone_number}?text=Hola me gustaría concertar una cita con usted. Por favor notifíqueme que días tiene disponibles.`;
+  }
+  ngAfterViewInit(): void {
+    this.toolbar = document.getElementById('toolbarId');
+  }
+
+  onScroll($event: any) {
+    if ($event.detail.scrollTop !== 0) {
+      // hide buttons
+      this.render.removeClass(this.toolbar, 'show-toolbar');
+      this.render.addClass(this.toolbar, 'hide-toolbar');
+    } else {
+      // show buttons
+      this.render.removeClass(this.toolbar, 'hide-toolbar');
+      this.render.addClass(this.toolbar, 'show-toolbar');
+    }
   }
 
   call(phone_number: string) {
